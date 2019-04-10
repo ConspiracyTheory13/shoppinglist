@@ -22,77 +22,16 @@ $(document).ready(function() {
             + '</button> </div>';
 
         $('.shopping-list').append('<li>' + buttonLabelOpen + text + buttonLabelClose + itemControls + '</li>');
-
-        // $('#shopping-list-entry').val('');
         e.preventDefault();
     });
 
-    $('.shopping-item-delete').on('click', function(e){
-        $(this).parent().parent().remove();
-    });
-    $('.shopping-item-toggle').on('click', function(e){
-        $('.shopping-item-toggle').closest('span').toggleClass();
+    $('.shopping-list').on('click', '.shopping-item-delete', function(event){
+        $(this).closest('li').remove();
+
+});
+
+$('.shopping-list').on('click', '.shopping-item-toggle', function(event) {
+    $(this).closest('li').find('.shopping-item').toggleClass('shopping-item__checked');
 
     })
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// $("shopping-list").on('submit', function () {
-// var text = $("addtolist").val();
-// $("#shopping-list-entry").append('<li>' + text + '</li>');
-//   e.preventDefault();
-
-
-//
-// function removeItemFromList(button) {
-//   $("button-label").click(".button-label");
-//   $(this).remove('.shopping-item');
-// }
-//
-// removeItemFromList();
-
-
-// for removing strikethrough class  $('.shopping-item').addClass('removeClass');
-// function removeItemFromList {
-//   $( ".shopping-item-delete" ).click(function() {
-//   $( ".shopping-item" ).remove();
-// });
-//
-// removeItemFromList();
-
-
-// });
-// }
-//
-// document.getElementById(".shopping-item-delete").onclick = function() {myFunction()};
-//
-// function myFunction() {
-//   document.getElementById(".shopping-item-delete").classList.toggle("show");
-// }
-//
-// // function strikeItemFromList {
-// //   $(".shopping-item-toggle").click(function() {
-// //   $( this ).slideUp();
-// // });
-// // }
